@@ -73,7 +73,14 @@ print(largest)
  Given a number `N`, from 0 to `N`, add up all the odd numbers and print out the result.
  ie: N = 5, 1+3+5 = 9
  */
-
+var num = 5
+var n = 0
+for i in 1...5{
+    if i % 2 != 0{
+        n += i
+    }
+}
+print(n)
 
 /*:
  - Callout(Challenge):
@@ -89,5 +96,11 @@ print(largest)
  */
 
 let numberArray = [1, 4, 5, 5, 5, 3, 2, 1, 4, 2, 2, 2, 1]
+var numberDict: [Int: Int] = [:]
+for number in numberArray
+{
+    numberDict[number, default:0] += 1
+}
 
+print(numberDict)
 //: [Next](@next)

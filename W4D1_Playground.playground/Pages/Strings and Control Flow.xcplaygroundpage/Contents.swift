@@ -77,13 +77,28 @@ default:
  - Callout(Challenge):
  Create an if/else statement to print out the grammatically correct description of the number of bicycles there are. Declare a 'bicycleCount' variable with any number you wish then cover the conditions for zero bicycles, 1 bicycle, and more than 1 bicycle. ie: 'There are zero bicycles', 'There is 1 bicycle', 'There are 20 bicycles'
  */
+let bicycleCount = 100
 
+if bicycleCount <= 0{
+    print("There are zero bicyle")
+}else if bicycleCount == 1{
+    print("There are \(bicycleCount) bicyle")
+}else{
+    print("There are \(bicycleCount) bicyles")
+}
 
 /*:
  - Callout(Challenge):
  Rewrite the above Challenge as a switch statement
  */
-
+switch bicycleCount {
+case let count where count <= 0:
+    print("There are zero bicyle")
+case 1:
+    print("There are \(bicycleCount) bicyle")
+default:
+    print("There are \(bicycleCount) bicyles")
+}
 
 /*:
  - Callout(Challenge):
@@ -93,5 +108,11 @@ default:
  - If the year can be evenly divided by 100 = Is NOT a Leap Year, unless;
  - The year is also evenly divisible by 400 = Is Leap Year
  */
+let year = 100
 
+if (year % 400 == 0 && year % 100 != 0) || (year % 4 == 0 && year % 100 != 0){
+    print("Leap Year")
+}else {
+    print("NOT Leap Year")
+}
 //: [Next](@next)

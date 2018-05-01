@@ -50,6 +50,11 @@ class NamedShapeClass {
         self.name = name
     }
     
+    init(name: String, numberOfSides: Int) {
+        self.name = name
+        self.numberOfSides = numberOfSides
+    }
+    
     func description() -> String {
         return "A shape with \(numberOfSides) sides."
     }
@@ -72,8 +77,27 @@ class NamedShapeClass {
  */
 
 class Square : NamedShapeClass {
+    var sideLength = 0
+    var area = 0
+
+    init(name: String, sideLength: Int, numberOfSides: Int) {
+        self.sideLength = sideLength
+        super.init(name: name, numberOfSides: numberOfSides)
+    }
+    
+     func calculateArea(){
+        area = sideLength * sideLength
+    }
+    
+    override func description() -> String {
+        return "A shape with \(numberOfSides) sides, with length of \(sideLength) has area of \(area)"
+    }
     
 }
+
+let square = Square.init(name: "square", sideLength: 10, numberOfSides: 4)
+square.calculateArea()
+square.description()
 
 /*:
  - Callout(Challenge):
@@ -90,6 +114,31 @@ class Square : NamedShapeClass {
  - Add an instance of Toyota called toyota. Initialize it.
  - Add the drive() method to make sure it prints out "Prius"
  */
+class Car{
+    var model: String
+    
+    init(model: String) {
+        self.model = model
+    }
+    
+    func drive(){
+        print("You are driving \(model)")
+    }
+    
+}
+
+class Toyota: Car{
+    override init(model: String) {
+        super.init(model: model)
+        self.model = "Prius"
+    }
+}
+
+let nissan = Car.init(model: "Rouge")
+nissan.drive()
+let toyota = Toyota.init(model: "abc")
+toyota.drive()
+
 
 
 
@@ -102,9 +151,15 @@ First, create a Person class with a name property and a custom initializer that 
 Now create the same Person class but convert it to a struct. Uncomment 'Section B'. What do think will happen? What are the results?
 */
 // Implement Person class under here!
-
-
-// Section A
+//class Person{
+//    var name = ""
+//
+//    init(name: String) {
+//        self.name = name
+//    }
+//}
+//
+//// Section A
 //var firstPersonObject = Person(name: "Joe")
 //var secondPersonObject = firstPersonObject
 //secondPersonObject.name = "Jane"
@@ -114,15 +169,21 @@ Now create the same Person class but convert it to a struct. Uncomment 'Section 
 
 
 // Implement Person struct under here!
-
+struct Person{
+    var name = ""
+    
+    init(name: String) {
+        self.name = name
+    }
+}
 
 // Section B
-//var firstPersonStruct = Person(name: "Joe")
-//var secondPersonStruct = firstPersonStruct
-//secondPersonStruct.name = "Jane"
-//
-//print(firstPersonStruct.name)
-//print(secondPersonStruct.name)
+var firstPersonStruct = Person(name: "Joe")
+var secondPersonStruct = firstPersonStruct
+secondPersonStruct.name = "Jane"
+
+print(firstPersonStruct.name)
+print(secondPersonStruct.name)
 
 
 //: [Next](@next)

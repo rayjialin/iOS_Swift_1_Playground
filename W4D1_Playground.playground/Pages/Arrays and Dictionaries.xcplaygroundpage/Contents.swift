@@ -60,7 +60,14 @@ myDictionary["Principal"] = 1
  
     Finally, print out each person's name from the array using their index and string interpolation
 */
+var nameArray = [String]()
+nameArray.append("John")
+nameArray.append("Karen")
+nameArray.append("Jane")
 
+for (index, name) in nameArray.enumerated(){
+    print("index: \(index), name: \(name)")
+}
 
 /*:
  - Callout(Challenge):
@@ -74,6 +81,10 @@ myDictionary["Principal"] = 1
  
     On the next line, add this last person's info: Bob - $45000
  */
+var salaryDict = ["John" : "$50000", "Jane" : "$70000", "Karen" : "$62000"]
+salaryDict["Bob"] = "$45000"
+print(salaryDict)
+
 
 
 //: [Next](@next)

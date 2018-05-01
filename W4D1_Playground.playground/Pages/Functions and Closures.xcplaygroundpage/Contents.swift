@@ -53,12 +53,36 @@ func sayHello(toPerson: String) -> String{
  Create four separate functions to add, subtract, multiple, and divide with two parameters given to it and returns a number result. Try testing each one afterwards.
  
  */
+func addTwoNumber(num1:Int, num2:Int) -> Int{
+    return num1 + num2
+}
+print(addTwoNumber(num1: 10, num2: 20))
 
+func subtractTwoNumber(num1:Int, num2:Int) -> Int{
+    return num1 - num2
+}
+print(subtractTwoNumber(num1: 10, num2: 20))
+
+func multiplyTwoNumber(num1:Int, num2:Int) -> Int{
+    return num1 * num2
+}
+print(multiplyTwoNumber(num1: 10, num2: 20))
+
+func divideTwoNumber(num1:Int, num2:Int) -> Int{
+    return num1 / num2
+}
+print(divideTwoNumber(num1: 10, num2: 20))
 /*:
  - Callout(Challenge):
  Create your own 'reverse' function that takes in an array of Int, reverses the order of the array, and returns the newly reversed array of Int. The array class has its own 'reverse' method, but do not use it for this challenge.
  */
+let array = [1,2,5,7,3,5,4]
+var reverseArray = [Int]()
+for number in array {
+    reverseArray.insert(number, at: 0)
+}
 
+print(reverseArray)
 /*:
  ## Closures
  
@@ -133,3 +157,14 @@ var sayHelloClosureWithReturn = { (name: String) -> String in
  Create a closure with at least two parameters of your choice and decide whether or not it returns anything. Then create a function that takes in your closure as a parameter and one additional parameter of your choice.
  */
 //: [Next](@next)
+var closureIsAFunction = { (name: String, phone: String) -> String in
+    
+    return "reutnr something"
+}
+
+
+func printCalc(name: String, phone: (String) -> ())
+{
+    print("akg")
+}
+
